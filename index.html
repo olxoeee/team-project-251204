@@ -1,44 +1,40 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const saveButton = document.getElementById('save-button');
-    const emotionSelect = document.getElementById('emotion-select');
-    const snowflakeChoice = document.getElementById('snowflake-choice');
-    const snowPile = document.getElementById('snow-pile');
-    const appContainer = document.getElementById('app-container');
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>감정 눈병 프로젝트</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    // 감정 선택 시 배경 변경
-    emotionSelect.addEventListener('change', (e) => {
-        appContainer.className = '';
-        if (e.target.value) {
-            appContainer.classList.add(e.target.value);
-        }
-    });
+  <div id="app-container">
 
-    saveButton.addEventListener('click', () => {
-        if (!emotionSelect.value) {
-            alert('감정을 선택하세요!');
-            return;
-        }
-        createSnowflake(emotionSelect.value, snowflakeChoice.value);
-    });
+    <h1>❄ 감정 눈병 ❄</h1>
 
-    function createSnowflake(emotion, imagePath) {
-        const flake = document.createElement('div');
-        flake.classList.add('snowflake', emotion);
+    <label>감정 선택</label>
+    <select id="emotion-select">
+      <option value="">선택하세요</option>
+      <option value="happy">행복</option>
+      <option value="sad">슬픔</option>
+      <option value="annoyed">짜증</option>
+    </select>
 
-        flake.style.backgroundImage = `url('${imagePath}')`;
+    <label>눈송이 디자인</label>
+    <select id="snowflake-choice">
+      <option value="https://cdn-icons-png.flaticon.com/512/642/642102.png">
+        기본 눈송이
+      </option>
+      <option value="https://cdn-icons-png.flaticon.com/512/4151/4151022.png">
+        별 모양
+      </option>
+    </select>
 
-        const randomLeft = Math.floor(Math.random() * 80) + 10;
-        flake.style.left = `${randomLeft}%`;
+    <button id="save-button">눈 추가</button>
 
-        const randomTop = Math.floor(Math.random() * 20) + 70;
+    <div id="snow-pile"></div>
+  </div>
 
-        flake.addEventListener('animationend', () => {
-            flake.style.top = `${randomTop}%`;
-            if (emotion !== 'annoyed') {
-                flake.style.transform = `rotate(${Math.random() * 360}deg)`;
-            }
-        });
-
-        snowPile.appendChild(flake);
-    }
-});
+  <!-- JS 연결 (중요: body 맨 아래) -->
+  <script src="script.js"></script>
+</body>
+</html>
