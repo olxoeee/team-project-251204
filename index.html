@@ -2,39 +2,37 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>감정 눈병 프로젝트</title>
+  <title>눈송이 다이어리</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div id="app-container">
+  <h1 class="title">❄ 눈송이 다이어리 ❄</h1>
 
-    <h1>❄ 감정 눈병 ❄</h1>
-
-    <label>감정 선택</label>
+  <div id="controls">
     <select id="emotion-select">
-      <option value="">선택하세요</option>
-      <option value="happy">행복</option>
-      <option value="sad">슬픔</option>
-      <option value="annoyed">짜증</option>
+      <option value="">오늘의 감정</option>
+      <option value="happy">😊 행복</option>
+      <option value="excited">😆 설렘</option>
+      <option value="calm">😌 평온</option>
+      <option value="normal">😐 무난</option>
+      <option value="complex">🤔 복잡</option>
+      <option value="tired">😮‍💨 피곤</option>
+      <option value="sad">😢 우울</option>
+      <option value="angry">😡 짜증</option>
+      <option value="cold">🥶 차가움</option>
+      <option value="lonely">🌨️ 외로움</option>
     </select>
 
-    <label>눈송이 디자인</label>
-    <select id="snowflake-choice">
-      <option value="https://cdn-icons-png.flaticon.com/512/642/642102.png">
-        기본 눈송이
-      </option>
-      <option value="https://cdn-icons-png.flaticon.com/512/4151/4151022.png">
-        별 모양
-      </option>
-    </select>
-
-    <button id="save-button">눈 추가</button>
-
-    <div id="snow-pile"></div>
+    <button id="write-btn">일기 쓰기</button>
   </div>
 
-  <!-- JS 연결 (중요: body 맨 아래) -->
+  <div id="snow-field"></div>
+
+  <div id="jar">
+    🫙 눈송이 수 : <span id="count">0</span>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
