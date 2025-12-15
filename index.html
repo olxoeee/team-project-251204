@@ -2,36 +2,49 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>눈송이 다이어리</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1 class="title">❄ 눈송이 다이어리 ❄</h1>
+  <div class="container">
+    <header>
+      <h1 class="title">❄️ 눈송이 다이어리</h1>
+      <p class="subtitle">오늘의 감정을 눈송이로 기록해보세요</p>
+    </header>
 
-  <div id="controls">
-    <select id="emotion-select">
-      <option value="">오늘의 감정</option>
-      <option value="happy">😊 행복</option>
-      <option value="excited">😆 설렘</option>
-      <option value="calm">😌 평온</option>
-      <option value="normal">😐 무난</option>
-      <option value="complex">🤔 복잡</option>
-      <option value="tired">😮‍💨 피곤</option>
-      <option value="sad">😢 우울</option>
-      <option value="angry">😡 짜증</option>
-      <option value="cold">🥶 차가움</option>
-      <option value="lonely">🌨️ 외로움</option>
-    </select>
+    <div class="glass-panel">
+      <div id="controls">
+        <select id="emotion-select">
+          <option value="" disabled selected>오늘의 기분은 어떤가요?</option>
+          <option value="happy">😊 행복 (Happy)</option>
+          <option value="excited">😆 설렘 (Excited)</option>
+          <option value="calm">😌 평온 (Calm)</option>
+          <option value="normal">😐 무난 (Normal)</option>
+          <option value="complex">🤔 복잡 (Complex)</option>
+          <option value="tired">😮‍💨 피곤 (Tired)</option>
+          <option value="sad">😢 우울 (Sad)</option>
+          <option value="angry">😡 짜증 (Angry)</option>
+          <option value="cold">🥶 차가움 (Cold)</option>
+          <option value="lonely">🌨️ 외로움 (Lonely)</option>
+        </select>
 
-    <button id="write-btn">일기 쓰기</button>
+        <button id="write-btn">기록하기</button>
+      </div>
+
+      <div id="jar-display">
+        <span class="jar-icon">🫙</span>
+        <div class="count-info">
+            <span class="label">모인 눈송이</span>
+            <span id="count">0</span>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div id="snow-field"></div>
-
-  <div id="jar">
-    🫙 눈송이 수 : <span id="count">0</span>
-  </div>
 
   <script src="script.js"></script>
 </body>
